@@ -33,7 +33,7 @@ function Home() {
         <Navbar />
       </header>
       <main className=" bg-slate-400">
-        <Slider slideData={slideData}>
+        <Slider slideData={slideData} autoSlide={true}>
           {slideData.map((slide, index) => (
             <Slides
               key={index}
