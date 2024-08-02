@@ -18,7 +18,7 @@ const Input = ({
 }: inputProp) => {
   return (
     <div className="flex justify-between lg:w-1/3">
-      {label && <label htmlFor={id}>{label} :</label>}
+      {label && <label htmlFor={id}>{label} : </label>}
       <input
         id={id}
         value={value}

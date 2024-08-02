@@ -5,20 +5,20 @@ import { HiBars3, HiMiniBackspace } from "react-icons/hi2";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-gray-900 w-full z-20">
+    <nav className=" w-full z-20 text-black">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Heading />
         <div className="flex md:order-2 space-x-3 md:space-x-0 ">
           <button
             type="button"
-            className="text-white  md:text-lg lg:text-xl px-2 py-1 border-2 border-yellow-500 rounded-lg hover:bg-yellow-500"
+            className="black  md:text-lg lg:text-xl px-2 py-1 border-2 border-yellow-500 rounded-lg hover:bg-yellow-500"
           >
             Login
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-2xl text-white rounded-lg md:hidden hover:border-2 border-yellow-500"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-2xl  rounded-lg md:hidden hover:border-2 border-yellow-500"
           >
             {isOpen ? <HiMiniBackspace /> : <HiBars3 />}
           </button>

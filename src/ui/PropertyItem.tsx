@@ -26,7 +26,7 @@ const PropertyItem = ({
   mainImage,
 }: propertyItemProp) => {
   return (
-    <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-lg shadow-neutral-600 hover:-translate-y-1">
+    <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-sm shadow-neutral-200 hover:-translate-y-1">
       <div className="">
         <img
           src={mainImage}
