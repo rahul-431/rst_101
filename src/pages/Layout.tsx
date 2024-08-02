@@ -7,7 +7,7 @@ function Layout() {
       <header className="text-white">
         <Navbar />
       </header>
-      <main className=" bg-slate-400">
+      <main className=" bg-[#FFFCFC]">
         <Outlet />
       </main>
     </>

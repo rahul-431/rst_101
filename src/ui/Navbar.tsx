@@ -6,7 +6,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="bg-gray-900 w-full z-20">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Heading />
         <div className="flex md:order-2 space-x-3 md:space-x-0 ">
           <button
@@ -29,7 +29,7 @@ function Navbar() {
           } items-center justify-between w-full md:flex md:w-auto md:order-1`}
         >
           <ul className="flex flex-col justify-around p-2 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8  md:flex-row md:mt-0 md:border-0">
-            <Navitem name="Property" />
+            <Navitem to="property" name="Property" />
             <Navitem name="Agents" />
             <Navitem name="About us" />
           </ul>

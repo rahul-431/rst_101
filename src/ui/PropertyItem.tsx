@@ -1,29 +1,68 @@
-const PropertyItem = () => {
+// import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { HiMiniArrowLongRight } from "react-icons/hi2";
+import StarRating from "./RatingStar";
+
+type propertyItemProp = {
+  rating: number;
+  address: {
+    country: string;
+    province: string;
+    municipality: string;
+    ward: number;
+    area: string;
+  };
+  category: string;
+  type: string;
+  price: number;
+  mainImage: string;
+};
+
+const PropertyItem = ({
+  rating,
+  address,
+  category,
+  type,
+  price,
+  mainImage,
+}: propertyItemProp) => {
   return (
-    <div className="w-[300px] h-[280px] rounded-2xl">
-      <img
-        src="https://plus.unsplash.com/premium_photo-1689609950112-d66095626efb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="property image"
-        className="w-full h-full rounded-t-2xl"
-      />
-      <div className="flex flex-col gap-4 bg-white text-black">
-        <div className="flex justify-around">
-          <h1>Hetauda-10, TCN Road Bagmati province</h1>
-          <h1>NRS. 1500000</h1>
+    <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-lg shadow-neutral-600 hover:-translate-y-1">
+      <div className="">
+        <img
+          src={mainImage}
+          alt="Property Image"
+          className="w-full h-[260px] object-cover rounded-lg"
+        />
+      </div>
+      <div className="flex flex-col px-2 pb-2 ">
+        <div className="flex justify-between align-middle">
+          <h1 className="flex gap-2 align-middle text-lg text-yellow-500">
+            <span>{category}</span>
+            <span>On</span>
+            <span>{type}</span>
+          </h1>
+          <h2 className="text-lg flex items-center gap-1">
+            <StarRating rating={rating} />
+          </h2>
         </div>
-        <div className="flex justify-around">
-          <div className="flex gap-2">
-            <span></span>
-            <span>8 Beds</span>
-          </div>
-          <div className="flex gap-2">
-            <span></span>
-            <span>2 Baths</span>
-          </div>
-          <div className="flex gap-2">
-            <span></span>
-            <span>1520 Sqft</span>
-          </div>
+        <div className="flex gap-1 flex-wrap mb-4">
+          <h3>{address.country},</h3>
+          <h3>{address.province},</h3>
+          <h3>
+            {address.municipality}-{address.ward},
+          </h3>
+          <h3>{address.area}</h3>
+        </div>
+        <div className="flex justify-between align-middle">
+          <h2>
+            NPR {price} {type === "Rent" && " per Month"}
+          </h2>
+          <button className="px-2 bg-yellow-500 rounded-lg hover:bg-yellow-700 text-white flex items-center space-x-2">
+            <span>Explore</span>
+            <span>
+              <HiMiniArrowLongRight />
+            </span>
+          </button>
         </div>
       </div>
     </div>
