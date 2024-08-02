@@ -30,8 +30,8 @@ function Navbar() {
         >
           <ul className="flex flex-col justify-around p-2 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8  md:flex-row md:mt-0 md:border-0">
             <Navitem to="property" name="Property" />
-            <Navitem name="Agents" />
-            <Navitem name="About us" />
+            <Navitem to="#" name="Agents" />
+            <Navitem to="#" name="About us" />
           </ul>
         </div>
       </div>
