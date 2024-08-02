@@ -50,7 +50,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between items-center mt-4 text-sm ">
+      <div className="flex flex-col md:flex-row md:justify-between items-center mt-8 text-sm ">
         <p className="text-center">
           Copyright{" "}
           <span className="bg-black text-white border-none rounded-full px-1">
