@@ -13,7 +13,7 @@ const Slider = ({
   slideData,
   children,
   autoSlide = false,
-  autoSlideInterval = 3000,
+  autoSlideInterval = 4000,
 }: slideDataType) => {
   const [curr, setCurr] = useState(0);
 

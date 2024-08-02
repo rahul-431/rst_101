@@ -1,4 +1,3 @@
-import Navbar from "../ui/Navbar";
 import Slider from "../ui/Slider";
 import Slides from "../ui/Slides";
 
@@ -29,22 +28,17 @@ function Home() {
 
   return (
     <>
-      <header className="text-white">
-        <Navbar />
-      </header>
-      <main className=" bg-slate-400">
-        <Slider slideData={slideData} autoSlide={true}>
-          {slideData.map((slide, index) => (
-            <Slides
-              key={index}
-              city={slide.city}
-              country={slide.country}
-              image={slide.image}
-              price={slide.price}
-            />
-          ))}
-        </Slider>
-      </main>
+      <Slider slideData={slideData} autoSlide={true}>
+        {slideData.map((slide, index) => (
+          <Slides
+            key={index}
+            city={slide.city}
+            country={slide.country}
+            image={slide.image}
+            price={slide.price}
+          />
+        ))}
+      </Slider>
     </>
   );
 }
