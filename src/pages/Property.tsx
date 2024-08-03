@@ -48,6 +48,7 @@ function Property() {
         {propertyList.map((item) => (
           <PropertyItem
             key={item._id}
+            _id={item._id}
             category={item.category}
             address={item.address}
             price={item.price}
