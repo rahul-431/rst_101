@@ -22,7 +22,7 @@ function Slides({
       <img
         src={image}
         alt="Property image/video"
-        className="h-64 w-full md:h-full md:w-full object-cover object-center"
+        className="h-64 w-full md:h-full md:w-full object-center"
       />
       <div className="absolute inset-0 bg-slate-900 bg-opacity-60 p-4 w-full text-white lg:px-12">
         <div className="flex flex-col absolute top-8 lg:top-16 lg:gap-2">

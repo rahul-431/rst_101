@@ -1,8 +1,10 @@
 // import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import StarRating from "./RatingStar";
+import { useNavigate } from "react-router-dom";
 
 type propertyItemProp = {
+  _id: string;
   rating: number;
   address: {
     country: string;
@@ -18,6 +20,7 @@ type propertyItemProp = {
 };
 
 const PropertyItem = ({
+  _id,
   rating,
   address,
   category,
@@ -25,6 +28,7 @@ const PropertyItem = ({
   price,
   mainImage,
 }: propertyItemProp) => {
+  const navigate = useNavigate();
   return (
     <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-sm shadow-neutral-200 hover:-translate-y-1">
       <div className="">
@@ -57,7 +61,10 @@ const PropertyItem = ({
           <h2>
             NPR {price} {type === "Rent" && " per Month"}
           </h2>
-          <button className="px-2 bg-yellow-500 rounded-lg hover:bg-yellow-700 text-white flex items-center space-x-2">
+          <button
+            className="px-2 bg-yellow-500 rounded-lg hover:bg-yellow-700 text-white flex items-center space-x-2"
+            onClick={() => navigate(`/property/${_id}`)}
+          >
             <span>Explore</span>
             <span>
               <HiMiniArrowLongRight />
