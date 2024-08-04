@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Layout from "./pages/Layout";
 import Property from "./pages/Property";
 import PropertyDetail from "./features/property/PropertyDetail";
+import Agent from "./pages/Agent";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/property" element={<Property />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
+          <Route path="/agent" element={<Agent />} />
         </Route>
       </Routes>
     </Router>

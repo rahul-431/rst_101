@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Heading from "./Heading";
-import Navitem from "./Navitem";
+import Heading from "../ui/Heading";
+import Navitem from "../ui/Navitem";
 import { HiBars3, HiMiniBackspace } from "react-icons/hi2";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +30,7 @@ function Navbar() {
         >
           <ul className="flex flex-col justify-around p-2 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8  md:flex-row md:mt-0 md:border-0">
             <Navitem to="property" name="Property" />
-            <Navitem to="#" name="Agents" />
+            <Navitem to="agent" name="Agents" />
             <Navitem to="#" name="About us" />
           </ul>
         </div>
