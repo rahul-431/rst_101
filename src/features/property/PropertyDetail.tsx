@@ -23,6 +23,7 @@ import Map from "../../ui/Map";
 import { Link } from "react-scroll";
 import Modal from "../../ui/Modal";
 import ImageSlider from "../../ui/ImageSlider";
+import SimilarProperty from "./SimilarProperty";
 // type propertyDetailProp = {
 //   rating: number;
 //   address: {
@@ -327,6 +328,8 @@ const PropertyDetail = () => {
         </div>
         <GetInTouch />
       </section>
+      <hr className="mt-2" />
+      <SimilarProperty />
     </main>
   );
 };
