@@ -1,6 +1,7 @@
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { agentList } from "../data/agentList";
 import AgentListItem from "../features/agent/AgentListItem";
+import Pagination from "../ui/Pagination";
 
 const Agent = () => {
   return (
@@ -30,7 +31,7 @@ const Agent = () => {
 
       {/* agent list */}
       <section className="flex flex-col gap-5 my-8 md:ms-[18%] lg:ms-[20%] px-4 md:px-8 lg:px-12">
-        <div className="flex justify-end items-center gap-2 text-lg">
+        <div className="flex justify-start items-center gap-2 text-lg">
           <label htmlFor="sort">Sort :</label>
           <select
             name="sort"
@@ -55,6 +56,7 @@ const Agent = () => {
             />
           ))}
         </div>
+        <Pagination count={50} />
       </section>
     </main>
   );

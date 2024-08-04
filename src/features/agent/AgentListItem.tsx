@@ -50,19 +50,18 @@ const AgentListItem: React.FC<AgentListType> = ({
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 justify-around">
+      <div className="flex justify-between md:flex-col md:justify-around items-center">
         <div className="flex flex-col gap-1">
           <h1 className="text-gray-700">CONTACT</h1>
           <h2 className="md:text-lg">{contact}</h2>
         </div>
-        <div className="w-full">
-          <button className="flex space-x-2 items-center justify-center  py-1 px-2 bg-yellow-300 hover:bg-yellow-400 rounded-sm">
-            <span>Send Message</span>
-            <span>
-              <HiMiniArrowLongRight />
-            </span>
-          </button>
-        </div>
+
+        <button className="flex space-x-2 items-center justify-center  py-1 px-2 bg-yellow-300 hover:bg-yellow-400 rounded-sm">
+          <span>Send Message</span>
+          <span>
+            <HiMiniArrowLongRight />
+          </span>
+        </button>
       </div>
     </div>
   );

@@ -8,3 +8,7 @@
   padding: 0;
   font-family: "Federant", serif;
 }
+#pagination-next-button:hover:not(:disabled),
+#pagination-prev-button:hover:not(:disabled) {
+  background-color: #eab308;
+}
