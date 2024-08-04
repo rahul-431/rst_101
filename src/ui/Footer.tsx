@@ -59,8 +59,12 @@ function Footer() {
           2024 Homeland, All rights are reserved
         </p>
         <p className="flex gap-2 items-center">
-          <NavLink to="#">Terms and condition</NavLink>
-          <NavLink to="#">Privacy policy</NavLink>
+          <NavLink to="#" className="underline">
+            Terms and condition
+          </NavLink>
+          <NavLink to="#" className="underline">
+            Privacy policy
+          </NavLink>
         </p>
       </div>
     </div>

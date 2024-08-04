@@ -11,6 +11,7 @@ function Home() {
         {slideData.map((slide) => (
           <Slides
             key={slide._id}
+            _id={slide._id}
             city={slide.city}
             country={slide.country}
             image={slide.image}
