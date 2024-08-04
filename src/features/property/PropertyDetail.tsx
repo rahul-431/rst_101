@@ -16,7 +16,10 @@ import { BiArea } from "react-icons/bi";
 import { useState } from "react";
 import { IoCall } from "react-icons/io5";
 import { IoIosMail } from "react-icons/io";
-// import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import GetInTouch from "../../ui/GetInTouch";
+import "leaflet/dist/leaflet.css";
+import { LatLngExpression } from "leaflet";
+import Map from "../../ui/Map";
 // type propertyDetailProp = {
 //   rating: number;
 //   address: {
@@ -58,7 +61,7 @@ const PropertyDetail = () => {
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
   };
-  //   const position = [27.426757868421678, 85.04038092835826];
+  const position: LatLngExpression = [27.426757868421678, 85.04038092835826];
   return (
     <main className="px-4 md:px-8 lg:px-12 py-8 flex flex-col gap-4">
       <h1 className="text-lg md:text-xl">Property Details</h1>
@@ -221,17 +224,7 @@ const PropertyDetail = () => {
         <div className="flex flex-col gap-2 my-2">
           <h1 className="text-lg md:text-xl">Property Location</h1>
           <div className="w-full h-96 bg-violet-500 rounded-md">
-            {/* <MapContainer>
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={position}>
-                <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-              </Marker>
-            </MapContainer> */}
+            <Map center={position} zoom={13} />
           </div>
         </div>
         {/* property info */}
@@ -295,51 +288,7 @@ const PropertyDetail = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
-          <h1 className="text-xl">Let's get in touch</h1>
-          <form className="grid lg:grid-cols-2 gap-6 ">
-            <input
-              type="text"
-              placeholder="First Name"
-              className="px-4 py-2 bg-transparent border-b-2 border-yellow-500 md:max-w-56  outline-none md:text-lg rounded"
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              className="px-4 py-2 bg-transparent border-b-2 border-yellow-500 md:max-w-56 outline-none md:text-lg rounded"
-            />
-            <input
-              type="text"
-              placeholder="Email Address"
-              className="px-4 py-2 bg-transparent border-b-2 border-yellow-500 md:max-w-56 outline-none md:text-lg rounded"
-            />
-            <input
-              type="text"
-              placeholder="Phone Number"
-              className="px-4 py-2 bg-transparent border-b-2 border-yellow-500 md:max-w-56 outline-none md:text-lg rounded"
-            />
-
-            <label htmlFor="message" className="-mb-4 px-4">
-              Message(optional)
-            </label>
-            <textarea
-              className="lg:col-span-2 px-4 py-2 bg-transparent border-2 border-yellow-500 md:max-w-96 outline-none md:text-lg rounded"
-              name="message"
-              id="message"
-              rows={4}
-              placeholder="I am intereseted in this property"
-            ></textarea>
-            <button
-              type="submit"
-              className="flex space-x-2 items-center bg-yellow-300 hover:bg-yellow-400 w-36 py-1 px-2 justify-center rounded-md"
-            >
-              <span>Send Message</span>
-              <span>
-                <HiMiniArrowLongRight />
-              </span>
-            </button>
-          </form>
-        </div>
+        <GetInTouch />
       </section>
     </main>
   );
