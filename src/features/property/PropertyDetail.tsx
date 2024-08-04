@@ -111,7 +111,7 @@ const PropertyDetail = () => {
       </section>
 
       {/* second section */}
-      <section className="flex py-1 justify-between w-full text-lg sticky top-0 bg-yellow-200 px-2 z-50">
+      <section className="flex py-1 justify-between w-full text-lg sticky top-0 bg-yellow-200 px-2 z-20">
         <button
           className="md:w-1/5 flex space-x-2 items-center"
           onClick={() => navigate(-1)}
