@@ -2,6 +2,7 @@ import { propertyList } from "../data/propertyItemData";
 import Filter from "../ui/Filter";
 import PropertyItem from "../features/property/PropertyItem";
 import Search from "../ui/Search";
+import Pagination from "../ui/Pagination";
 
 function Property() {
   return (
@@ -44,19 +45,22 @@ function Property() {
           <Search />
         </div>
       </header>
-      <main className="px-4 lg:px-12 mt-4 grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
-        {propertyList.map((item) => (
-          <PropertyItem
-            key={item._id}
-            _id={item._id}
-            category={item.category}
-            address={item.address}
-            price={item.price}
-            mainImage={item.mainImage}
-            rating={item.rating}
-            type={item.type}
-          />
-        ))}
+      <main className="px-4 lg:px-12 my-5 flex flex-col gap-5">
+        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {propertyList.map((item) => (
+            <PropertyItem
+              key={item._id}
+              _id={item._id}
+              category={item.category}
+              address={item.address}
+              price={item.price}
+              mainImage={item.mainImage}
+              rating={item.rating}
+              type={item.type}
+            />
+          ))}
+        </div>
+        <Pagination count={50} />
       </main>
     </>
   );
