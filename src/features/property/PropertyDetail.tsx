@@ -5,7 +5,7 @@ import {
   FaRegShareSquare,
   FaVideo,
 } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { propertyList } from "../../data/propertyItemData";
 import {
   HiBookmark,
@@ -52,6 +52,7 @@ import ImageSlider from "../../ui/ImageSlider";
 // };
 const PropertyDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   if (!id) {
     return <h1>Property Not found</h1>;
   }
@@ -110,8 +111,11 @@ const PropertyDetail = () => {
       </section>
 
       {/* second section */}
-      <section className="flex py-1 justify-between w-full text-lg">
-        <button className="md:w-1/5 flex space-x-2 items-center">
+      <section className="flex py-1 justify-between w-full text-lg sticky top-0 bg-yellow-200 px-2 z-50">
+        <button
+          className="md:w-1/5 flex space-x-2 items-center"
+          onClick={() => navigate(-1)}
+        >
           <span>
             <HiMiniArrowLongLeft />
           </span>
@@ -123,13 +127,13 @@ const PropertyDetail = () => {
           </h1>
           <div className="flex justify-between gap-2 md:gap-6">
             <button className="flex space-x-1 items-center">
-              <span className="text-yellow-500">
+              <span>
                 <FaRegShareSquare />
               </span>
               <span className="hidden md:inline-block">Share</span>
             </button>
             <button className="flex space-x-1 items-center">
-              <span className="text-yellow-500">
+              <span>
                 <HiBookmark />
               </span>
               <span className="hidden md:inline-block">Save</span>
@@ -168,7 +172,7 @@ const PropertyDetail = () => {
           <Link
             to="message"
             smooth={true}
-            duration={1000}
+            duration={500}
             className="my-4 rounded-sm flex gap-4 items-center justify-center bg-yellow-200 py-1 px-2 hover:bg-yellow-300 max-w-96"
           >
             <img

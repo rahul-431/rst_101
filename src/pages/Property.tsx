@@ -1,6 +1,6 @@
 import { propertyList } from "../data/propertyItemData";
 import Filter from "../ui/Filter";
-import PropertyItem from "../ui/PropertyItem";
+import PropertyItem from "../features/property/PropertyItem";
 import Search from "../ui/Search";
 
 function Property() {

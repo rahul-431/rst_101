@@ -1,6 +1,6 @@
 // import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
-import StarRating from "./RatingStar";
+import StarRating from "../../ui/RatingStar";
 import { useNavigate } from "react-router-dom";
 
 type propertyItemProp = {
