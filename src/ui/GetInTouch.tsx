@@ -1,11 +1,12 @@
 import { HiMiniArrowLongRight } from "react-icons/hi2";
-
+import { Element } from "react-scroll";
 const GetInTouch = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <Element className="flex flex-col gap-4" name="message">
       <h1 className="text-xl">Let's get in touch</h1>
       <form className="grid lg:grid-cols-2 gap-6 ">
         <input
+          id="message"
           type="text"
           placeholder="First Name"
           className="px-4 py-2 bg-transparent border-b-2 border-yellow-500 md:max-w-56  outline-none md:text-lg rounded"
@@ -46,7 +47,7 @@ const GetInTouch = () => {
           </span>
         </button>
       </form>
-    </div>
+    </Element>
   );
 };
 

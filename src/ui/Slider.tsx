@@ -46,13 +46,13 @@ const Slider = ({
       <div className="absolute inset-0 flex items-end justify-between bottom-8 px-4 lg:px-12">
         <button
           onClick={prev}
-          className="cursor-pointer md:w-16 md:p-2 md:text-xl w-10 p-1  bg-yellow-500 hover:bg-yellow-500 bg-opacity-60 text-gray-800 rounded-lg  flex align-middle justify-center"
+          className="z-50 cursor-pointer md:w-16 md:p-2 md:text-xl w-10 p-1  bg-yellow-500 hover:bg-yellow-500 bg-opacity-60 text-gray-800 rounded-lg  flex align-middle justify-center"
         >
           <HiMiniArrowLongLeft />
         </button>
         <button
           onClick={next}
-          className=" cursor-pointer w-10 p-1 md:w-16 md:p-2 md:text-xl  bg-opacity-60 text-gray-800 rounded-lg bg-yellow-500 hover:bg-yellow-500 flex align-middle justify-center"
+          className="z-50 cursor-pointer w-10 p-1 md:w-16 md:p-2 md:text-xl  bg-opacity-60 text-gray-800 rounded-lg bg-yellow-500 hover:bg-yellow-500 flex align-middle justify-center"
         >
           <HiMiniArrowLongRight />
         </button>

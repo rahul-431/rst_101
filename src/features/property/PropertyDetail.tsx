@@ -20,6 +20,9 @@ import GetInTouch from "../../ui/GetInTouch";
 import "leaflet/dist/leaflet.css";
 import { LatLngExpression } from "leaflet";
 import Map from "../../ui/Map";
+import { Link } from "react-scroll";
+import Modal from "../../ui/Modal";
+import ImageSlider from "../../ui/ImageSlider";
 // type propertyDetailProp = {
 //   rating: number;
 //   address: {
@@ -54,10 +57,17 @@ const PropertyDetail = () => {
   }
   //   const newId = id.toString();
   const propertyData = propertyList[0];
-  const { mainImage, address, price, features, description, type, category } =
-    propertyData;
+  const {
+    mainImage,
+    address,
+    price,
+    features,
+    description,
+    type,
+    category,
+    otherImage,
+  } = propertyData;
   const [isExpanded, setIsExpanded] = useState(false);
-
   const toggleReadMore = () => {
     setIsExpanded(!isExpanded);
   };
@@ -76,17 +86,26 @@ const PropertyDetail = () => {
 
         {/* for other images */}
         <div className="absolute right-2 bottom-2 py-2 px-4 hidden md:flex gap-2 text-white">
-          <button className="flex space-x-2 items-center rounded-lg border-2 border-yellow-500 px-2 bg-yellow-500 hover:bg-transparent">
-            <span>
-              <FaRegImages />
-            </span>
-            <span>20</span>
-          </button>
-          <button className="flex space-x-2 items-center rounded-lg border-2 border-yellow-500 px-2 bg-yellow-500 hover:bg-transparent">
-            <span>
-              <FaVideo />
-            </span>
-          </button>
+          <Modal>
+            <Modal.Open opens="images">
+              <button className="flex space-x-2 items-center rounded-lg border-2 border-yellow-500 px-2 bg-yellow-500 hover:bg-transparent">
+                <span>
+                  <FaRegImages />
+                </span>
+                <span>20</span>
+              </button>
+            </Modal.Open>
+            <Modal.Open opens="video">
+              <button className="flex space-x-2 items-center rounded-lg border-2 border-yellow-500 px-2 bg-yellow-500 hover:bg-transparent">
+                <span>
+                  <FaVideo />
+                </span>
+              </button>
+            </Modal.Open>
+            <Modal.Window name="images">
+              <ImageSlider images={otherImage ? otherImage : []} />
+            </Modal.Window>
+          </Modal>
         </div>
       </section>
 
@@ -124,20 +143,34 @@ const PropertyDetail = () => {
       <section className="flex flex-col md:flex-row-reverse md:justify-between gap-4 my-2">
         <div>
           <div className="flex w-full gap-2 my-2">
-            <button className="flex space-x-2 items-center justify-center rounded-sm border-2 border-yellow-300 p-2 hover:bg-yellow-300 w-48">
-              <span>
-                <FaRegImages />
-              </span>
-              <span>20 Photos</span>
-            </button>
-            <button className="flex space-x-2 items-center justify-center rounded-sm border-2 border-yellow-300 px-2  hover:bg-yellow-300 w-48">
-              <span>
-                <FaVideo />
-              </span>
-              <span>Video</span>
-            </button>
+            <Modal>
+              <Modal.Open opens="images">
+                <button className="flex space-x-2 items-center justify-center rounded-sm border-2 border-yellow-300 p-2 hover:bg-yellow-300 w-48">
+                  <span>
+                    <FaRegImages />
+                  </span>
+                  <span>20 Photos</span>
+                </button>
+              </Modal.Open>
+              <Modal.Open opens="video">
+                <button className="flex space-x-2 items-center justify-center rounded-sm border-2 border-yellow-300 px-2  hover:bg-yellow-300 w-48">
+                  <span>
+                    <FaVideo />
+                  </span>
+                  <span>Video</span>
+                </button>
+              </Modal.Open>
+              <Modal.Window name="images">
+                <ImageSlider images={otherImage ? otherImage : []} />
+              </Modal.Window>
+            </Modal>
           </div>
-          <div className="my-4 rounded-sm flex gap-4 items-center justify-center bg-yellow-200 py-1 px-2 hover:bg-yellow-300 max-w-96">
+          <Link
+            to="message"
+            smooth={true}
+            duration={1000}
+            className="my-4 rounded-sm flex gap-4 items-center justify-center bg-yellow-200 py-1 px-2 hover:bg-yellow-300 max-w-96"
+          >
             <img
               src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt="Agent Image"
@@ -152,7 +185,7 @@ const PropertyDetail = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* fourth section */}
