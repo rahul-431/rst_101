@@ -4,19 +4,30 @@ import PropertyItem from "../features/property/PropertyItem";
 import Search from "../ui/Search";
 import Pagination from "../ui/Pagination";
 import SortBy from "../ui/SortBy";
+import { useSearchParams } from "react-router-dom";
 
 function Property() {
+  const [searchParam] = useSearchParams();
+  const hasAgentId: boolean = searchParam.get("agentId") ? true : false;
+  const agentName = "Tom Holland";
   return (
     <>
       <header className="px-4 lg:px-12 flex flex-col gap-4 py-4">
         {/* header part  */}
         <div className="flex flex-col gap-5 md:gap-6">
-          <div className="flex flex-col gap-2">
+          <div className={`${hasAgentId ? "hidden" : "flex"} flex-col gap-2`}>
             <h2 className="text-lg text-center">Our resent projects</h2>
             <h1 className="text-2xl md:text-3xl lg:text-5xl text-center">
               Best Properties of the years
             </h1>
           </div>
+          <h1
+            className={`${
+              hasAgentId ? "block" : "hidden"
+            } text-xl text-yellow-600 `}
+          >
+            Property Listed By : {agentName}
+          </h1>
           <div className="flex justify-between align-middle lg:text-lg md:text-lg">
             <h2 className="">Rent an House in Nepal</h2>
             <Filter
