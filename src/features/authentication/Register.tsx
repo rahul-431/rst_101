@@ -1,15 +1,16 @@
-import { useForm } from "react-hook-form";
-
-import { FaGoogle } from "react-icons/fa";
 import { useGoogleLogin } from "@react-oauth/google";
+import { useForm } from "react-hook-form";
+import { FaGoogle } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-type LoginForm = {
+type RegisterFormType = {
+  cpassword: string;
   email: string;
   password: string;
 };
-const Login = () => {
-  const { register, handleSubmit } = useForm<LoginForm>();
-  const handleLogin = (data: LoginForm) => {
+const Register = () => {
+  const { register, handleSubmit } = useForm<RegisterFormType>();
+
+  const handleLogin = (data: RegisterFormType) => {
     console.log(data);
   };
   const googleLogin = useGoogleLogin({
@@ -27,7 +28,7 @@ const Login = () => {
         <div className="w-full rounded-lg shadow-md shadow-black dark:border md:mt-0 sm:max-w-md xl:p-0 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="mb-8 text-xl font-bold leading-tight tracking-tight  md:text-2xl text-center">
-              Log in!
+              Create an account
             </h1>
             <div className="text-center flex flex-col gap-3">
               <button
@@ -71,38 +72,30 @@ const Login = () => {
                   className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                 />
               </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-start">
-                  <div className="flex items-center h-5">
-                    <input
-                      id="remember"
-                      aria-describedby="remember"
-                      type="checkbox"
-                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                    />
-                  </div>
-                  <div className="ml-3 ">
-                    <label htmlFor="remember">Remember me</label>
-                  </div>
-                </div>
-                <a
-                  href="#"
-                  className=" font-medium text-primary-600 hover:underline dark:text-primary-500"
-                >
-                  Forgot password?
-                </a>
+              <div>
+                <label htmlFor="cpassword" className="block mb-2  font-medium">
+                  Confirm Password
+                </label>
+                <input
+                  {...register("cpassword", { required: true })}
+                  type="password"
+                  name="cpassword"
+                  id="cpassword"
+                  className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg  block w-full p-2.5"
+                />
               </div>
+
               <button
                 type="submit"
-                className="w-full text-white bg-yellow-500 hover:bg-yellow-600 font-medium rounded-lg  px-5 py-2.5 text-center"
+                className="w-full text-white bg-yellow-600 hover:bg-yellow-500  font-medium rounded-lg px-5 py-2.5 text-center"
               >
-                Sign in
+                Sign up
               </button>
 
               <p className="text-center font-light">
-                Don’t have an account yet?{" "}
-                <NavLink to="/register" className="underline">
-                  Sign up
+                Already have an account?{" "}
+                <NavLink to="/login" className="underline">
+                  Login
                 </NavLink>
               </p>
             </form>
@@ -113,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
