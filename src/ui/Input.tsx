@@ -25,7 +25,7 @@ const Input = ({
         onChange={onChange}
         type={type}
         placeholder={placeHolder}
-        className="px-2 outline-none outline-yellow-500 rounded-md w-3/4"
+        className="px-2 outline-none outline-yellow-500 rounded-sm w-3/4"
       />
     </div>
   );
