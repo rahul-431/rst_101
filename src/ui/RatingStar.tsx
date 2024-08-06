@@ -16,16 +16,18 @@ const RatingStar = ({ rating }: ratingProp) => {
   const emptyStarArray = Array(emptyStars).fill(null);
 
   return (
-    <div className="flex items-center">
-      {fullStarArray.map((_, index) => (
-        <FaStar key={`full-${index}`} className="text-yellow-500" />
-      ))}
-      {halfStarArray.map((_, index) => (
-        <FaStarHalfAlt key={`half-${index}`} className="text-yellow-500" />
-      ))}
-      {emptyStarArray.map((_, index) => (
-        <FaRegStar key={`empty-${index}`} className="text-yellow-500" />
-      ))}
+    <div className="flex">
+      <div className={`flex items-center`}>
+        {fullStarArray.map((_, index) => (
+          <FaStar key={`full-${index}`} className="text-yellow-500" />
+        ))}
+        {halfStarArray.map((_, index) => (
+          <FaStarHalfAlt key={`half-${index}`} className="text-yellow-500" />
+        ))}
+        {emptyStarArray.map((_, index) => (
+          <FaRegStar key={`empty-${index}`} className="text-yellow-500" />
+        ))}
+      </div>
       <span className="ml-2">{rating}</span>
     </div>
   );
