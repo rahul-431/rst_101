@@ -2,6 +2,7 @@ import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { agentList } from "../data/agentList";
 import AgentListItem from "../features/agent/AgentListItem";
 import Pagination from "../ui/Pagination";
+import SortBy from "../ui/SortBy";
 
 const Agent = () => {
   return (
@@ -31,19 +32,18 @@ const Agent = () => {
 
       {/* agent list */}
       <section className="flex flex-col gap-5 my-8 md:ms-[18%] lg:ms-[20%] px-4 md:px-8 lg:px-12">
-        <div className="flex justify-start items-center gap-2 text-lg">
-          <label htmlFor="sort">Sort :</label>
-          <select
-            name="sort"
-            id="sort"
-            className="w-24 px-4 py-1 bg-transparent border-2 border-yellow-500 rounded-md outline-none"
-          >
-            <option value="a-z" defaultChecked>
-              A-Z
-            </option>
-            <option value="z-a">Z-A</option>
-          </select>
-        </div>
+        <SortBy
+          options={[
+            {
+              label: "Ascending (A-Z)",
+              value: "asc",
+            },
+            {
+              label: "Descending (Z-A)",
+              value: "dsc",
+            },
+          ]}
+        />
         <hr />
         <div className="flex flex-col gap-8">
           {agentList.map((agent) => (

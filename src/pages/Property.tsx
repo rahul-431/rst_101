@@ -3,6 +3,7 @@ import Filter from "../ui/Filter";
 import PropertyItem from "../features/property/PropertyItem";
 import Search from "../ui/Search";
 import Pagination from "../ui/Pagination";
+import SortBy from "../ui/SortBy";
 
 function Property() {
   return (
@@ -45,7 +46,22 @@ function Property() {
           <Search />
         </div>
       </header>
-      <main className="px-4 lg:px-12 my-5 flex flex-col gap-5">
+      <main className="px-4 lg:px-12 my-5 flex flex-col gap-5 pb-5">
+        <SortBy
+          options={[
+            {
+              label: "Exclusive(default)",
+              value: "default",
+            },
+            {
+              label: "Price high-low",
+              value: "price-hl",
+            },
+            { label: "Price low-high", value: "price-lh" },
+            { label: "Area high-low", value: "area-hl" },
+            { label: "Area low-high", value: "area-lh" },
+          ]}
+        />
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
           {propertyList.map((item) => (
             <PropertyItem

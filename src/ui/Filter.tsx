@@ -22,7 +22,7 @@ const Filter = ({ filterField, options }: filterProp) => {
           onClick={() => handleClick(option.value)}
           className={`${
             currentFilter === option.value && "bg-yellow-500 "
-          } border-none rounded-md px-2 py-2 hover:bg-yellow-500 `}
+          } border-none rounded-md px-2  hover:bg-yellow-500 `}
           disabled={currentFilter === option.value}
         >
           {option.label}
