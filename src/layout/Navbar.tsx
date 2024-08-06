@@ -2,10 +2,9 @@ import { useState } from "react";
 import Heading from "../ui/Heading";
 import Navitem from "../ui/Navitem";
 import { HiBars3, HiMiniBackspace } from "react-icons/hi2";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   return (
     <nav className="bg-gradient-to-r from-yellow-100 to-indigo-100 w-full z-20 text-black">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">

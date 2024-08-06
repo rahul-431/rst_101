@@ -1,4 +1,3 @@
-// import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import StarRating from "../../ui/RatingStar";
 import { useNavigate } from "react-router-dom";
@@ -30,8 +29,8 @@ const PropertyItem = ({
 }: propertyItemProp) => {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-sm shadow-neutral-200 hover:-translate-y-1">
-      <div className="">
+    <div className="flex flex-col gap-2 rounded-lg w-full bg-gray-50 shadow-sm shadow-neutral-200">
+      <div className="md:w-[302px] w-full">
         <img
           src={mainImage}
           alt="Property Image"
@@ -57,7 +56,7 @@ const PropertyItem = ({
           </h3>
           <h3>{address.area}</h3>
         </div>
-        <div className="flex justify-between align-middle">
+        <div className="flex justify-between align-middle items-center">
           <h2>
             NPR {price} {type === "Rent" && " per Month"}
           </h2>
