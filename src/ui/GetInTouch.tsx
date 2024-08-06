@@ -1,6 +1,11 @@
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { Element } from "react-scroll";
-const GetInTouch = () => {
+type getInTouchType = {
+  placeholder?: string;
+};
+const GetInTouch = ({
+  placeholder = "I am interested to collaborate",
+}: getInTouchType) => {
   return (
     <Element className="flex flex-col gap-4" name="message">
       <h1 className="text-xl">Let's get in touch</h1>
@@ -35,7 +40,7 @@ const GetInTouch = () => {
           name="message"
           id="message"
           rows={4}
-          placeholder="I am intereseted in this property"
+          placeholder={placeholder}
         ></textarea>
         <button
           type="submit"

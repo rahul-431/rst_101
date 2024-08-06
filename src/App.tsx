@@ -6,6 +6,7 @@ import PropertyDetail from "./features/property/PropertyDetail";
 import Agent from "./pages/Agent";
 import AgentProfile from "./features/agent/AgentProfile";
 import Login from "./features/authentication/Login";
+import SellWithUs from "./pages/SellWithUs";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/property" element={<Property />} />
           <Route path="/property/:id" element={<PropertyDetail />} />
           <Route path="/agent" element={<Agent />} />
+          <Route path="/sell" element={<SellWithUs />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element="{}" />
           <Route path="/agent/:id" element={<AgentProfile />} />

@@ -11,10 +11,10 @@ function Navbar() {
         <Heading />
         <div className="flex md:order-2 space-x-3 md:space-x-0 ">
           <NavLink
-            to="login"
+            to="sell"
             className="black  md:text-lg px-2 py-1 border-2 rounded-lg bg-yellow-500 border-b-8"
           >
-            Join Us
+            Sell With Us
           </NavLink>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -33,6 +33,7 @@ function Navbar() {
             <Navitem to="property" name="Property" />
             <Navitem to="agent" name="Agents" />
             <Navitem to="#" name="About us" />
+            <Navitem to="login" name="Join/Login" />
           </ul>
         </div>
       </div>
