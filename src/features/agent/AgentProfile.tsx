@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 
 const AgentProfile = () => {
   const agent = {
+    _id: "agent101",
     name: "Tom Cruise Jr.",
     image:
       "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -147,7 +148,7 @@ const AgentProfile = () => {
             ))}
           </div>
           <NavLink
-            to="#"
+            to={`/property?agentId=${agent._id}`}
             className="mt-2 flex space-x-2 items-center bg-yellow-300 hover:bg-yellow-400 w-full md:w-60 py-1 px-2 justify-center rounded-md"
           >
             <span>View All Properties</span>
