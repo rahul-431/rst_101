@@ -2,19 +2,21 @@ import { useState } from "react";
 import Heading from "../ui/Heading";
 import Navitem from "../ui/Navitem";
 import { HiBars3, HiMiniBackspace } from "react-icons/hi2";
+import { NavLink, useNavigate } from "react-router-dom";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
   return (
     <nav className="bg-gradient-to-r from-yellow-100 to-indigo-100 w-full z-20 text-black">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Heading />
         <div className="flex md:order-2 space-x-3 md:space-x-0 ">
-          <button
-            type="button"
+          <NavLink
+            to="login"
             className="black  md:text-lg px-2 py-1 border-2 rounded-lg bg-yellow-500 border-b-8"
           >
             Join Us
-          </button>
+          </NavLink>
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
