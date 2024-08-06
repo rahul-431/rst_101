@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 
 import { FaGoogle } from "react-icons/fa";
-import Navitem from "../../ui/Navitem";
 import { useGoogleLogin } from "@react-oauth/google";
+import { NavLink } from "react-router-dom";
 type LoginForm = {
   email: string;
   password: string;
@@ -23,7 +23,7 @@ const Login = () => {
   });
   return (
     <section>
-      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-8 bg-yellow-50">
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-8">
         <div className="w-full rounded-lg shadow-md shadow-black dark:border md:mt-0 sm:max-w-md xl:p-0 ">
           <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
             <h1 className="mb-8 text-xl font-bold leading-tight tracking-tight  md:text-2xl text-center">
@@ -33,7 +33,7 @@ const Login = () => {
               <button
                 onClick={() => googleLogin()}
                 type="button"
-                className="text-base border border-gray-200 hover:bg-gray-100 px-4 py-2 rounded-lg flex items-center justify-center gap-2"
+                className="border border-gray-200 hover:bg-gray-100 px-4 py-2 rounded-lg flex items-center justify-center gap-2"
               >
                 <span className="me-2 text-red-500">
                   <FaGoogle />
@@ -48,10 +48,7 @@ const Login = () => {
               onSubmit={handleSubmit(handleLogin)}
             >
               <div>
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium"
-                >
+                <label htmlFor="email" className="block mb-2  font-medium">
                   Your email
                 </label>
                 <input
@@ -63,10 +60,7 @@ const Login = () => {
                 />
               </div>
               <div>
-                <label
-                  htmlFor="password"
-                  className="block mb-2 text-sm font-medium"
-                >
+                <label htmlFor="password" className="block mb-2  font-medium">
                   Password
                 </label>
                 <input
@@ -87,13 +81,13 @@ const Login = () => {
                       className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
                     />
                   </div>
-                  <div className="ml-3 text-sm">
+                  <div className="ml-3 ">
                     <label htmlFor="remember">Remember me</label>
                   </div>
                 </div>
                 <a
                   href="#"
-                  className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500"
+                  className=" font-medium text-primary-600 hover:underline dark:text-primary-500"
                 >
                   Forgot password?
                 </a>
@@ -105,9 +99,11 @@ const Login = () => {
                 Sign in
               </button>
 
-              <p className="text-center text-base font-light">
+              <p className="text-center font-light">
                 Don’t have an account yet?{" "}
-                <Navitem to="/register" name="Sign up" />
+                <NavLink to="/register" className="underline">
+                  Sign up
+                </NavLink>
               </p>
             </form>
           </div>
