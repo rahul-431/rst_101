@@ -8,6 +8,7 @@ import AgentProfile from "./features/agent/AgentProfile";
 import Login from "./features/authentication/Login";
 import SellWithUs from "./pages/SellWithUs";
 import Register from "./features/authentication/Register";
+import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/agent/:id" element={<AgentProfile />} />
         </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </Router>
   );

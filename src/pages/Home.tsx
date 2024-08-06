@@ -2,6 +2,7 @@ import { HiMiniArrowLongRight } from "react-icons/hi2";
 import { slideData } from "../data/slidedata";
 import Slider from "../ui/Slider";
 import Slides from "../ui/Slides";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   return (
@@ -40,12 +41,15 @@ function Home() {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
             modi, atque voluptatibus ducimus laboriosam praesentium?
           </p>
-          <button className="flex gap-2 border-none bg-yellow-500 py-1 px-2 rounded-lg w-32 items-center">
+          <NavLink
+            to="/sell"
+            className="flex gap-2 border-none bg-yellow-500 py-1 px-2 rounded-lg w-32 items-center"
+          >
             <span>Let's Begin</span>{" "}
             <span>
               <HiMiniArrowLongRight />
             </span>
-          </button>
+          </NavLink>
         </div>
       </div>
 
