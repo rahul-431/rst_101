@@ -1,4 +1,5 @@
 import { HiMiniArrowLongRight } from "react-icons/hi2";
+import { useNavigate } from "react-router-dom";
 
 interface AgentListType {
   image: string;
@@ -21,17 +22,26 @@ const AgentListItem: React.FC<AgentListType> = ({
   address,
   contact,
 }) => {
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/agent/1");
+  };
+
   return (
     <div className="flex md:flex-row flex-col justify-between gap-4">
       <div className="flex md:flex-row flex-col justify-between gap-4">
         <img
+          onClick={handleNavigate}
           src={image}
           alt="Agent Image"
           className="md:w-40 md:h-48 h-72 w-full object-cover cursor-pointer rounded-md"
         />
         <div className="flex flex-col justify-around gap-4">
           <div className="flex flex-col gap-1">
-            <h1 className="text-xl md:text-2xl cursor-pointer text-yellow-500 hover:text-yellow-600">
+            <h1
+              onClick={handleNavigate}
+              className="text-xl md:text-2xl cursor-pointer text-yellow-500 hover:text-yellow-600"
+            >
               {name}
             </h1>
             <h2 className="uppercase text-gray-700">{role}</h2>
@@ -56,7 +66,10 @@ const AgentListItem: React.FC<AgentListType> = ({
           <h2 className="md:text-lg">{contact}</h2>
         </div>
 
-        <button className="flex space-x-2 items-center justify-center  py-1 px-2 bg-yellow-300 hover:bg-yellow-400 rounded-sm">
+        <button
+          onClick={handleNavigate}
+          className="flex space-x-2 items-center justify-center  py-1 px-2 bg-yellow-300 hover:bg-yellow-400 rounded-sm"
+        >
           <span>Send Message</span>
           <span>
             <HiMiniArrowLongRight />

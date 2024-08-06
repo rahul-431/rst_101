@@ -173,7 +173,7 @@ const PropertyDetail = () => {
           <Link
             to="message"
             smooth={true}
-            duration={500}
+            duration={1000}
             className="my-4 rounded-sm flex gap-4 items-center justify-center bg-yellow-200 py-1 px-2 hover:bg-yellow-300 max-w-96"
           >
             <img
