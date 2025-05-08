@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 import { FaGoogle } from "react-icons/fa";
-import { useGoogleLogin } from "@react-oauth/google";
+// import { useGoogleLogin } from "@react-oauth/google";
 import { NavLink } from "react-router-dom";
 type LoginForm = {
   email: string;
@@ -12,15 +12,15 @@ const Login = () => {
   const handleLogin = (data: LoginForm) => {
     console.log(data);
   };
-  const googleLogin = useGoogleLogin({
-    onSuccess: async (response) => {
-      const gt: GoogleLoginRequest = { access_token: response.access_token };
-      console.log(gt);
-    },
-    onError: () => {
-      console.log("something went wrong");
-    },
-  });
+  // const googleLogin = useGoogleLogin({
+  //   onSuccess: async (response) => {
+  //     const gt: GoogleLoginRequest = { access_token: response.access_token };
+  //     console.log(gt);
+  //   },
+  //   onError: () => {
+  //     console.log("something went wrong");
+  //   },
+  // });
   return (
     <section>
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-8">
@@ -31,7 +31,9 @@ const Login = () => {
             </h1>
             <div className="text-center flex flex-col gap-3">
               <button
-                onClick={() => googleLogin()}
+                onClick={() => {
+                  console.log("google login is in progress");
+                }}
                 type="button"
                 className="border border-gray-200 hover:bg-gray-100 px-4 py-2 rounded-lg flex items-center justify-center gap-2"
               >
